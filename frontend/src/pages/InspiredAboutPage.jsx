@@ -244,16 +244,16 @@ const InspiredAboutPage = () => {
           </h2>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <a href={`mailto:${personalInfo.email}`} className="inline-block">
-              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold pointer-events-auto">
+            <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold" asChild>
+              <a href={`mailto:${personalInfo.email}`}>
                 <Mail className="mr-2 w-5 h-5" />
                 Contact Me
-              </Button>
-            </a>
+              </a>
+            </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 pointer-events-auto"
+              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
               onClick={() => navigate('/work')}
             >
               View Experience
