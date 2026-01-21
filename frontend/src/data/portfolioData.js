@@ -356,40 +356,40 @@ export const techStack = {
     { name: "React", icon: "⚛️", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "FastAPI", icon: "⚡", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
     { name: "MongoDB", icon: "🍃", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "WordPress", icon: "📝", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
+    { name: "WordPress", icon: "📝", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
     { name: "Python", icon: "🐍", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "JavaScript", icon: "💛", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { name: "Emergent", icon: "✨", logo: "https://avatars.githubusercontent.com/in/1201222?s=120" }
+    { name: "Emergent", icon: "✨", logo: "https://framerusercontent.com/images/OgCCmotVDAi8Ee4FKm4NHXDc.png" }
   ],
   aiTools: [
-    { name: "ChatGPT", icon: "🤖", logo: "https://static.vecteezy.com/system/resources/previews/021/059/827/non_2x/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector.jpg" },
-    { name: "Claude", icon: "🧠", logo: "https://www.anthropic.com/_next/image?url=%2Fimages%2Ficons%2Fapple-touch-icon.png&w=64&q=75" },
-    { name: "HeyGen", icon: "🎥", logo: "https://assets-global.website-files.com/63fdcbe48aa020c0a5493507/63fdd3bf2214c65e5d7f77e2_heygen-logo.png" },
-    { name: "Synthesia", icon: "👤", logo: "https://www.synthesia.io/favicon.svg" },
-    { name: "ElevenLabs", icon: "🎙️", logo: "https://elevenlabs.io/favicon.ico" },
-    { name: "Lovable", icon: "💫", logo: "https://lovable.dev/favicon.ico" }
+    { name: "ChatGPT", icon: "🤖", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
+    { name: "Claude", icon: "🧠", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg" },
+    { name: "HeyGen", icon: "🎥", logo: "" },
+    { name: "Synthesia", icon: "👤", logo: "" },
+    { name: "ElevenLabs", icon: "🎙️", logo: "" },
+    { name: "Lovable", icon: "💫", logo: "" }
   ],
   marketing: [
     { name: "Google Ads", icon: "📊", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
     { name: "Facebook Ads", icon: "📱", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" },
-    { name: "Semrush", icon: "🔍", logo: "https://www.semrush.com/favicon.ico" },
-    { name: "Google Analytics", icon: "📈", logo: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg" },
-    { name: "Canva", icon: "🎨", logo: "https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" },
-    { name: "Adobe CS", icon: "🎭", logo: "https://www.adobe.com/favicon.ico" }
+    { name: "Semrush", icon: "🔍", logo: "" },
+    { name: "Google Analytics", icon: "📈", logo: "" },
+    { name: "Canva", icon: "🎨", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" },
+    { name: "Adobe CS", icon: "🎭", logo: "" }
   ],
   automation: [
-    { name: "n8n", icon: "🔄", logo: "https://n8n.io/favicon.ico" },
-    { name: "Zapier", icon: "⚡", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/zapier/zapier-original.svg" },
-    { name: "Zoho CRM", icon: "📋", logo: "https://www.zoho.com/favicon.ico" },
-    { name: "Zoho Billing", icon: "💳", logo: "https://www.zoho.com/favicon.ico" },
-    { name: "Gmail API", icon: "📧", logo: "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" },
+    { name: "n8n", icon: "🔄", logo: "" },
+    { name: "Zapier", icon: "⚡", logo: "" },
+    { name: "Zoho CRM", icon: "📋", logo: "" },
+    { name: "Zoho Billing", icon: "💳", logo: "" },
+    { name: "Gmail API", icon: "📧", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
     { name: "Slack", icon: "💬", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" },
-    { name: "Discord", icon: "🎮", logo: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" }
+    { name: "Discord", icon: "🎮", logo: "" }
   ],
   content: [
-    { name: "Loom", icon: "🎬", logo: "https://www.loom.com/favicon.ico" },
-    { name: "YouTube", icon: "📺", logo: "https://www.youtube.com/s/desktop/f506bd45/img/favicon_32.png" },
-    { name: "Elementor", icon: "🏗️", logo: "https://elementor.com/favicon.ico" }
+    { name: "Loom", icon: "🎬", logo: "" },
+    { name: "YouTube", icon: "📺", logo: "" },
+    { name: "Elementor", icon: "🏗️", logo: "" }
   ]
 };
 
