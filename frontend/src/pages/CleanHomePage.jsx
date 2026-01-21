@@ -161,6 +161,42 @@ const CleanHomePage = () => {
         </div>
       </section>
 
+      {/* Achievements Highlight */}
+      <section className="py-24 px-6 border-t border-slate-800">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8">
+            The <span className="text-emerald-400">Numbers</span> Don&apos;t Lie
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+              <div className="text-3xl font-bold text-emerald-400">1,000+</div>
+              <div className="text-sm text-slate-400 mt-1">Users in 30 days</div>
+              <div className="text-xs text-slate-600 mt-1">AI Kaptan launch</div>
+            </Card>
+            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+              <div className="text-3xl font-bold text-emerald-400">₹84K+</div>
+              <div className="text-sm text-slate-400 mt-1">Saved annually</div>
+              <div className="text-xs text-slate-600 mt-1">Smart automation</div>
+            </Card>
+            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+              <div className="text-3xl font-bold text-emerald-400">Page 1</div>
+              <div className="text-sm text-slate-400 mt-1">Google ranking</div>
+              <div className="text-xs text-slate-600 mt-1">In 30 days, $0 ads</div>
+            </Card>
+            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+              <div className="text-3xl font-bold text-emerald-400">₹8 Cr</div>
+              <div className="text-sm text-slate-400 mt-1">Ad spend managed</div>
+              <div className="text-xs text-slate-600 mt-1">18% ROI improvement</div>
+            </Card>
+          </div>
+          
+          <p className="text-slate-500 text-center italic">
+            &quot;I don&apos;t just talk strategy—I ship products, break spreadsheets, and occasionally break the internet.&quot;
+          </p>
+        </div>
+      </section>
+
       {/* Tech Stack */}
       <section className="py-24 px-6 border-t border-slate-800">
         <div className="max-w-4xl mx-auto">
@@ -168,11 +204,11 @@ const CleanHomePage = () => {
             Tech <span className="text-emerald-400">Stack</span>
           </h2>
           
-          <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4">
+          <div className="grid grid-cols-6 md:grid-cols-10 lg:grid-cols-12 gap-2">
             {Object.values(techStack).flat().map((tool, index) => (
               <div
                 key={index}
-                className="aspect-square bg-slate-900/50 rounded-lg border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 hover:scale-110 flex items-center justify-center group cursor-pointer p-3"
+                className="aspect-square bg-slate-900/50 rounded-md border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 hover:scale-110 flex items-center justify-center group cursor-pointer p-2"
                 title={tool.name}
               >
                 {tool.logo ? (
@@ -183,11 +219,11 @@ const CleanHomePage = () => {
                     onError={(e) => {
                       e.target.style.display = 'none';
                       const parent = e.target.parentElement;
-                      parent.innerHTML = `<div class="text-2xl opacity-70 group-hover:opacity-100 transition-opacity">${tool.icon}</div>`;
+                      parent.innerHTML = `<div class="text-lg opacity-70 group-hover:opacity-100 transition-opacity">${tool.icon}</div>`;
                     }}
                   />
                 ) : (
-                  <div className="text-2xl opacity-70 group-hover:opacity-100 transition-opacity">
+                  <div className="text-lg opacity-70 group-hover:opacity-100 transition-opacity">
                     {tool.icon}
                   </div>
                 )}
