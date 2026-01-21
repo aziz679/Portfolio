@@ -40,7 +40,7 @@ const InspiredProjectsPage = () => {
           <p className="text-xl text-slate-400 max-w-3xl leading-relaxed">
             I love <span className="font-semibold text-white">turning ideas into real products.</span>
             <br />
-            Here I show you some of the developments I've worked on, applying technology, marketing strategy, and lots of creativity.
+            Here I show you some of the developments I&apos;ve worked on, applying technology, marketing strategy, and lots of creativity.
             <br />
             <span className="text-emerald-400 font-medium">Check them out!</span>
           </p>

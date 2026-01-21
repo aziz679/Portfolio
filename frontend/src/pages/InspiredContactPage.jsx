@@ -31,7 +31,7 @@ const InspiredContactPage = () => {
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Have a project in mind? Want to collaborate? Or just want to say hi? 
-            I'd love to hear from you.
+            I&apos;d love to hear from you.
           </p>
         </div>
       </section>
@@ -112,7 +112,7 @@ const InspiredContactPage = () => {
       <section className="py-16 px-6 border-t border-slate-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            What I'm <span className="text-emerald-400">Looking For</span>
+            What I&apos;m <span className="text-emerald-400">Looking For</span>
           </h2>
           
           <div className="grid md:grid-cols-3 gap-6">
