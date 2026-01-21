@@ -240,7 +240,7 @@ const InspiredAboutPage = () => {
           <h2 className="text-4xl font-bold mb-6">
             Ready to take your idea to the next level?
             <br />
-            <span className="text-emerald-400">Let's work together.</span>
+            <span className="text-emerald-400">Let&apos;s work together.</span>
           </h2>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">

@@ -298,7 +298,7 @@ const InspiredWorkPage = () => {
           <h2 className="text-4xl font-bold mb-6">
             Ready to take your idea to the next level?
             <br />
-            <span className="text-emerald-400">Let's work together.</span>
+            <span className="text-emerald-400">Let&apos;s work together.</span>
           </h2>
           
           <a href={`mailto:${email}`}>
