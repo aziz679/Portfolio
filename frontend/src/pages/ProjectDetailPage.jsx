@@ -1,24 +1,24 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { projectsDetailed } from '../data/expandedMock';
+import { projects } from '../data/portfolioData';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { ExternalLink, Github, ArrowLeft, CheckCircle, TrendingUp } from 'lucide-react';
+import { ExternalLink, ArrowLeft, CheckCircle, Lightbulb, Rocket, TrendingUp } from 'lucide-react';
 
 const ProjectDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const project = projectsDetailed.find(p => p.id === parseInt(id));
+  const project = projects.find(p => p.id === parseInt(id));
   
   if (!project) {
     return (
       <div className="min-h-screen bg-slate-950 pt-24 pb-16 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate('/projects')}>
+          <Button onClick={() => navigate('/')}>
             <ArrowLeft className="mr-2 w-4 h-4" />
-            Back to Projects
+            Back to Home
           </Button>
         </div>
       </div>
@@ -31,176 +31,175 @@ const ProjectDetailPage = () => {
         {/* Back Button */}
         <Button 
           variant="ghost" 
-          className="text-slate-400 hover:text-sky-400 mb-8"
-          onClick={() => navigate('/projects')}
+          className="text-slate-400 hover:text-sky-400 mb-8 group"
+          onClick={() => navigate('/')}
         >
-          <ArrowLeft className="mr-2 w-4 h-4" />
-          Back to Projects
+          <ArrowLeft className="mr-2 w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Home
         </Button>
         
         {/* Header */}
         <div className="mb-12">
-          <div className="flex items-start justify-between mb-4">
+          <Badge variant="outline" className="border-orange-500/30 text-orange-400 mb-4">
+            {project.type}
+          </Badge>
+          
+          <div className="flex items-start justify-between mb-6">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">{project.name}</h1>
-              <p className="text-2xl text-orange-400 font-medium mb-4">{project.tagline}</p>
-              <Badge 
-                variant="secondary" 
-                className={`${
-                  project.status === 'Live & Growing' 
-                    ? 'bg-green-500/20 text-green-400 border-green-500/30' 
-                    : 'bg-orange-500/20 text-orange-400 border-orange-500/30'
-                }`}
-              >
-                {project.status}
-              </Badge>
-            </div>
-            <div className="flex gap-4">
-              {project.link !== '#' && (
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-sky-400 transition-colors"
-                >
-                  <Button variant="outline" className="border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white">
-                    <ExternalLink className="mr-2 w-4 h-4" />
-                    Visit Site
-                  </Button>
-                </a>
+              <p className="text-3xl text-sky-400 font-semibold mb-4">{project.tagline}</p>
+              {project.status && (
+                <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
+                  {project.status}
+                </Badge>
               )}
             </div>
+            
+            {project.link && (
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-sky-500 hover:bg-sky-600 text-white">
+                  <ExternalLink className="mr-2 w-4 h-4" />
+                  Visit Live
+                </Button>
+              </a>
+            )}
+          </div>
+          
+          <div className="bg-sky-500/10 border border-sky-500/20 rounded-lg p-6">
+            <p className="text-sky-300 font-semibold text-lg">{project.tldr}</p>
           </div>
         </div>
         
-        {/* Screenshot */}
-        {project.screenshots && project.screenshots[0] && (
+        {/* Main Project Image */}
+        {project.images && project.images[0] && (
           <div className="mb-12 rounded-lg overflow-hidden border border-slate-800">
             <img 
-              src={project.screenshots[0].url} 
-              alt={project.screenshots[0].title}
+              src={project.images[0].url} 
+              alt={project.images[0].caption}
               className="w-full"
+              onError={(e) => {
+                e.target.parentElement.innerHTML = `<div class="w-full aspect-video bg-slate-800 flex items-center justify-center"><div class="text-6xl">${project.id === 1 ? '🚀' : project.id === 2 ? '📧' : project.id === 3 ? '📞' : '📺'}</div></div>`;
+              }}
             />
-          </div>
-        )}
-        
-        {/* Genesis Story */}
-        {project.genesis && (
-          <Card className="bg-slate-900/50 border-slate-800 p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">The Genesis Story</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-orange-400 mb-2">💡 The Problem</h3>
-                <p className="text-slate-300 leading-relaxed">{project.genesis.problem}</p>
+            {project.images[0].caption && (
+              <div className="bg-slate-900 px-6 py-3 border-t border-slate-800">
+                <p className="text-slate-400 text-sm">{project.images[0].caption}</p>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-sky-400 mb-2">🧠 The Insight</h3>
-                <p className="text-slate-300 leading-relaxed">{project.genesis.insight}</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-green-400 mb-2">✅ The Solution</h3>
-                <p className="text-slate-300 leading-relaxed">{project.genesis.solution}</p>
-              </div>
-            </div>
-          </Card>
-        )}
-        
-        {/* Journey */}
-        {project.journey && (
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-8">The Journey</h2>
-            <div className="space-y-6">
-              {project.journey.map((phase, index) => (
-                <Card key={index} className="bg-slate-900/50 border-slate-800 p-6 hover:border-sky-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-bold text-sky-400 mb-3">{phase.phase}</h3>
-                  <p className="text-slate-300 leading-relaxed">{phase.description}</p>
-                </Card>
-              ))}
-            </div>
+            )}
           </div>
         )}
         
-        {/* Features */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-white mb-8">Key Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.features.map((feature, index) => (
-              <Card key={index} className="bg-slate-900/50 border-slate-800 p-6 hover:border-sky-500/30 transition-all duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="text-3xl">{feature.icon}</div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                    <p className="text-slate-400">{feature.description}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+        {/* The Challenge */}
+        <Card className="bg-slate-900/50 border-slate-800 p-8 mb-12">
+          <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+            <Lightbulb className="w-8 h-8 text-orange-400" />
+            The Challenge
+          </h2>
+          <p className="text-slate-300 text-lg leading-relaxed">{project.challenge}</p>
+        </Card>
         
-        {/* Metrics */}
-        {project.metrics && (
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-8">The Numbers</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-              {project.metrics.map((metric, index) => (
-                <Card key={index} className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-sky-500/30 transition-all duration-300 hover:scale-105">
-                  <div className="text-3xl font-bold text-sky-400 mb-2">{metric.value}</div>
-                  <div className="text-sm text-slate-400">{metric.label}</div>
-                  {metric.trend === 'up' && <TrendingUp className="w-4 h-4 text-green-400 mx-auto mt-2" />}
-                </Card>
-              ))}
-            </div>
-          </div>
-        )}
-        
-        {/* Tech Stack */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-white mb-8">Tech Stack</h2>
-          <div className="flex flex-wrap gap-3">
-            {project.techStack.map((tech, index) => (
-              <Badge key={index} variant="outline" className="border-sky-500/30 text-sky-400 text-lg px-4 py-2">
+        {/* What I Built */}
+        <Card className="bg-slate-900/50 border-slate-800 p-8 mb-12">
+          <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+            <Rocket className="w-8 h-8 text-sky-400" />
+            What I Built
+          </h2>
+          <p className="text-slate-300 text-lg leading-relaxed mb-6">{project.whatIBuilt}</p>
+          
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((tech, index) => (
+              <Badge key={index} variant="outline" className="border-sky-500/30 text-sky-400 text-sm px-3 py-1">
                 {tech}
               </Badge>
             ))}
           </div>
-        </div>
+        </Card>
         
-        {/* Learnings */}
-        {project.learnings && (
-          <Card className="bg-slate-900/50 border-slate-800 p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Key Learnings</h2>
-            <div className="space-y-4">
-              {project.learnings.map((learning, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
-                  <p className="text-slate-300 leading-relaxed">{learning}</p>
+        {/* Additional Images Gallery */}
+        {project.images && project.images.length > 1 && (
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-white mb-8">Product Screens</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {project.images.slice(1).map((image, index) => (
+                <div key={index} className="rounded-lg overflow-hidden border border-slate-800 hover:border-sky-500/30 transition-all duration-300">
+                  <img 
+                    src={image.url} 
+                    alt={image.caption}
+                    className="w-full aspect-video object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  {image.caption && (
+                    <div className="bg-slate-900 px-4 py-3 border-t border-slate-800">
+                      <p className="text-slate-400 text-sm">{image.caption}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
         )}
         
-        {/* Roadmap */}
-        {project.roadmap && (
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-8">Roadmap</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {project.roadmap.map((phase, index) => (
-                <Card key={index} className="bg-slate-900/50 border-slate-800 p-6">
-                  <h3 className="text-xl font-bold text-sky-400 mb-4">{phase.phase}</h3>
-                  <ul className="space-y-2">
-                    {phase.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="text-slate-300 flex items-start gap-2">
-                        <span className="text-orange-400 mt-1">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+        {/* Impact & Results */}
+        <Card className="bg-slate-900/50 border-slate-800 p-8 mb-12">
+          <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+            <TrendingUp className="w-8 h-8 text-green-400" />
+            Impact & Results
+          </h2>
+          <div className="space-y-3">
+            {project.impact.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-0.5 flex-shrink-0" />
+                <span className="text-slate-300 text-lg">{item}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+        
+        {/* Metrics Grid */}
+        {project.metrics && project.metrics.length > 0 && (
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-white mb-8">By the Numbers</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {project.metrics.map((metric, index) => (
+                <Card key={index} className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-sky-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-4xl font-bold text-sky-400 mb-2">{metric.value}</div>
+                  <div className="text-sm text-slate-400">{metric.label}</div>
                 </Card>
               ))}
             </div>
           </div>
+        )}
+        
+        {/* The Story */}
+        {project.story && (
+          <Card className="bg-gradient-to-br from-slate-900 to-slate-800 border-slate-700 p-8 mb-12">
+            <h2 className="text-3xl font-bold text-white mb-6">The Story</h2>
+            <p className="text-slate-300 text-lg leading-relaxed">{project.story}</p>
+          </Card>
+        )}
+        
+        {/* Key Learnings */}
+        {project.learnings && (
+          <Card className="bg-slate-900/50 border-slate-800 p-8">
+            <h2 className="text-3xl font-bold text-white mb-6">Key Learnings</h2>
+            <div className="space-y-4">
+              {project.learnings.map((learning, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-orange-400 font-bold">{index + 1}</span>
+                  </div>
+                  <p className="text-slate-300 text-lg leading-relaxed">{learning}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
         )}
       </div>
     </div>
