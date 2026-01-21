@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import EnhancedHeader from "./components/EnhancedHeader";
+import MinimalistHeader from "./components/MinimalistHeader";
 import AppRoutes from "./routes/AppRoutes";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App bg-slate-950 min-h-screen">
-        <EnhancedHeader />
+      <div className="App bg-black min-h-screen">
+        <MinimalistHeader />
         <AppRoutes />
         <Toaster />
       </div>
