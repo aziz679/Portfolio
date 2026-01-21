@@ -132,33 +132,44 @@ const CleanHomePage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="max-w-4xl w-full">
-          <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 mb-6">
+      <section ref={heroRef} className="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className={`max-w-4xl w-full ${heroVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 mb-6 animate-glow-pulse">
             Available for work
           </Badge>
           
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+          <h1 className={`text-6xl md:text-8xl font-bold mb-6 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Mohammed Azizuddin 👋
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-400 leading-relaxed mb-12 max-w-3xl">
+          <p className={`text-xl md:text-2xl leading-relaxed mb-12 max-w-3xl ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
             Product Marketing Specialist | Builder | Growth Strategist with 3 years of experience. 
             I love building products people actually use and creating marketing systems that drive real growth. 🚀
           </p>
           
           <div className="flex flex-wrap gap-4">
             <a href={`mailto:${email}`}>
-              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
+              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold btn-press hover-lift">
                 <Mail className="mr-2 w-5 h-5" />
                 Contact Me
+              </Button>
+            </a>
+            
+            <a href={resumeUrl} download>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className={`btn-press hover-lift ${isDark ? 'border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10' : 'border-emerald-600 text-emerald-600 hover:bg-emerald-50'}`}
+              >
+                <Download className="mr-2 w-5 h-5" />
+                Download Resume
               </Button>
             </a>
             
             <Button 
               size="lg" 
               variant="outline"
-              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+              className={`btn-press hover-lift ${isDark ? 'border-slate-700 text-slate-400 hover:bg-slate-800' : 'border-slate-300 text-slate-600 hover:bg-slate-100'}`}
               onClick={() => navigate('/about')}
             >
               About Me
@@ -168,10 +179,10 @@ const CleanHomePage = () => {
         </div>
       </section>
 
-      {/* Beyond the Work */}
-      <section className="py-24 px-6 border-t border-slate-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">
+      {/* Beyond the Code */}
+      <section className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
+        <div ref={interestsRef} className="max-w-4xl mx-auto">
+          <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Beyond the <span className="text-emerald-400">Code</span>
           </h2>
           
