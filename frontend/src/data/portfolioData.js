@@ -393,4 +393,12 @@ export const techStack = {
   ]
 };
 
-// Continued in next file due to length...
+export const personalInfo = {
+  name: "Mohammed Azizuddin",
+  title: "Product Marketer & Builder",
+  email: "aziziddinmohd7@gmail.com",
+  phone: "+91-9535151254",
+  linkedin: "https://www.linkedin.com/in/mohammed-azizuddin-701434288/",
+  github: "https://github.com",
+  location: "Bangalore, India"
+};
