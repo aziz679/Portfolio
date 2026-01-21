@@ -88,8 +88,8 @@ export const projects = [
     
     images: [
       { 
-        url: "https://static.prod-images.emergentagent.com/jobs/31c66a46-85c1-4314-b6c2-c9e0361cfca0/images/72df14d4f117e51bd729b56e6d0624a9af12e74bcae7bff6d87e9f03ba0a9db1.png", 
-        caption: "AI Kaptan Homepage - Clean discovery interface with smart search",
+        url: "https://www.aikaptan.com/_next/static/media/logo.a1ed0be6.png", 
+        caption: "AI Kaptan - Discover 1000+ AI Tools",
         fallback: "🚀"
       },
       { 
@@ -232,8 +232,8 @@ export const projects = [
     
     images: [
       { 
-        url: "https://static.prod-images.emergentagent.com/jobs/31c66a46-85c1-4314-b6c2-c9e0361cfca0/images/fa526b06d7c604ddfb568637408a5f7fff2132f283ac7c5e162713b53f894d08.png", 
-        caption: "Hero Section - 50K+ daily calls, 98% satisfaction, AI that sounds human",
+        url: "https://frontdesk.ralvie.ai/og-image.png", 
+        caption: "Ralvie Frontdesk - AI that answers every call",
         fallback: "📞"
       }
     ],
@@ -294,8 +294,8 @@ export const projects = [
     
     images: [
       { 
-        url: "https://static.prod-images.emergentagent.com/jobs/31c66a46-85c1-4314-b6c2-c9e0361cfca0/images/8caa9d9f9b58430b1726b0c011f43893e8f3c3a9cb9401665fd7bce9d7cd6b12.png", 
-        caption: "AI Unleashed Homepage - Purple neon theme with AI tools and news",
+        url: "https://aiunleashed.ca/wp-content/uploads/2025/06/ChatGPT-Image-Jun-24-2025-05_31_58-PM.png", 
+        caption: "AI Unleashed - Your AI Knowledge Hub",
         fallback: "🌟"
       }
     ],
