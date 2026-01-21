@@ -648,17 +648,17 @@ const CleanHomePage = () => {
           </h2>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <a href={`mailto:${email}`}>
-              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold btn-press hover-lift animate-glow-pulse">
+            <a href={`mailto:${email}`} className="inline-block">
+              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold btn-press hover-lift animate-glow-pulse pointer-events-auto">
                 <Mail className="mr-2 w-5 h-5" />
                 Contact Me
               </Button>
             </a>
-            <a href={resumeUrl} download>
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="inline-block">
               <Button 
                 size="lg" 
                 variant="outline"
-                className={`btn-press hover-lift ${isDark ? 'border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10' : 'border-emerald-600 text-emerald-600 hover:bg-emerald-50'}`}
+                className={`btn-press hover-lift pointer-events-auto ${isDark ? 'border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10' : 'border-emerald-600 text-emerald-600 hover:bg-emerald-50'}`}
               >
                 <Download className="mr-2 w-5 h-5" />
                 Download Resume
