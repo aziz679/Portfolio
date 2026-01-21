@@ -318,6 +318,73 @@ export const projects = [
       "Zero budget forces creative solutions—constraints breed innovation",
       "Community engagement matters more than follower count—quality over quantity"
     ]
+  },
+  {
+    id: 5,
+    name: "Ralvie.ai",
+    tagline: "The AI Productivity Platform That Works",
+    type: "WordPress • Content Strategy • Pricing • UX",
+    shortDescription: "Complete website for Ralvie's AI productivity platform. Built content strategy, pricing tiers, and user flows that convert.",
+    tldr: "Ralvie needed a website that could sell a complex AI platform. Built the entire thing on WordPress with strategic content and pricing that drives conversions.",
+    
+    challenge: "Ralvie AI had two major products—Frontdesk (AI receptionist) and Productivity Platform (time tracking + analytics). Needed a website that could explain both clearly, establish trust, and convert visitors into demo requests. Complex product, skeptical B2B audience.",
+    
+    whatIBuilt: "Full WordPress website with strategic content architecture. Designed user flows for both products. Created pricing strategy with tiered plans. Built trust elements throughout. Wrote conversion-focused copy. Set up analytics and tracking. Integrated with booking system for demos. Made complex AI accessible to non-technical buyers.",
+    
+    impact: [
+      "🌐 Production website live at ralvie.ai",
+      "📝 Strategic content for 2 major product lines",
+      "💰 Pricing strategy with multiple tiers",
+      "🎯 User flows optimized for conversion",
+      "📊 Analytics and tracking implemented",
+      "🔗 Integrated demo booking system",
+      "✨ Trust elements throughout the site"
+    ],
+    
+    metrics: [
+      { label: "Platform", value: "WordPress" },
+      { label: "Products", value: "2" },
+      { label: "Pricing Tiers", value: "Multiple" },
+      { label: "Pages Built", value: "10+" },
+      { label: "Demo Bookings", value: "Active" },
+      { label: "User Flows", value: "Optimized" }
+    ],
+    
+    tech: ["WordPress", "Elementor", "Content Strategy", "Pricing Design", "UX/UI", "Analytics", "Zoho Integration"],
+    
+    link: "https://www.ralvie.ai",
+    
+    images: [
+      { 
+        url: "https://ralvie.ai/wp-content/uploads/2025/11/Ralvie-frontdesk-7.png", 
+        caption: "Ralvie AI - Frontdesk product showcase",
+        fallback: "🤖"
+      },
+      { 
+        url: "https://ralvie.ai/wp-content/uploads/2025/11/Productivity-trend-3.png", 
+        caption: "Productivity Platform - Analytics dashboard",
+        fallback: "📊"
+      }
+    ],
+    
+    story: "Ralvie had built amazing AI products but their website wasn't converting. Took ownership of the entire web presence. Started with user research—what do B2B buyers need to see? Built content architecture for both products. Designed pricing that made sense for different company sizes. Created clear user flows from homepage to demo booking. Wrote copy that explains AI without jargon. Added trust signals everywhere. Result: a website that actually sells a complex AI platform.",
+    
+    keyFeatures: [
+      { title: "Dual Product Strategy", description: "Clear positioning for both Frontdesk (AI calls) and Productivity Platform (time tracking)." },
+      { title: "Pricing Architecture", description: "Tiered pricing designed to capture different market segments and maximize conversions." },
+      { title: "Trust Building", description: "Case studies, stats, testimonials strategically placed to overcome AI skepticism." },
+      { title: "User Flow Design", description: "Every page guides visitors toward demo booking with clear CTAs." },
+      { title: "Content Strategy", description: "SEO-optimized content explaining complex AI features in accessible language." },
+      { title: "Integration Ready", description: "Connected with Zoho CRM, booking systems, and analytics for full funnel tracking." }
+    ],
+    
+    learnings: [
+      "B2B websites need to build trust before asking for commitment—every section should add credibility",
+      "Pricing pages are conversion pages—design them with the same care as landing pages",
+      "Complex products need simple explanations—if your mom can't understand it, rewrite it",
+      "WordPress + Elementor is powerful for rapid iteration—don't underestimate it",
+      "User flows matter more than individual page design—think in journeys, not pages"
+    ]
   }
 ];
 
