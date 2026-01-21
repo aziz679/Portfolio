@@ -244,8 +244,8 @@ const InspiredAboutPage = () => {
           </h2>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <a href={`mailto:${personalInfo.email}`}>
-              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
+            <a href={`mailto:${personalInfo.email}`} className="inline-block">
+              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold pointer-events-auto">
                 <Mail className="mr-2 w-5 h-5" />
                 Contact Me
               </Button>
@@ -253,7 +253,7 @@ const InspiredAboutPage = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 pointer-events-auto"
               onClick={() => navigate('/work')}
             >
               View Experience

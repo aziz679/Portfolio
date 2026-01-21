@@ -301,8 +301,8 @@ const InspiredWorkPage = () => {
             <span className="text-emerald-400">Let&apos;s work together.</span>
           </h2>
           
-          <a href={`mailto:${email}`}>
-            <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold mt-6">
+          <a href={`mailto:${email}`} className="inline-block mt-6">
+            <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold pointer-events-auto">
               <Mail className="mr-2 w-5 h-5" />
               Contact Me
             </Button>
