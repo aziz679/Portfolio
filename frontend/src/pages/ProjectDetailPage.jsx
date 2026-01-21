@@ -126,13 +126,13 @@ const ProjectDetailPage = () => {
             <h2 className="text-3xl font-bold text-white mb-8">Product Screens</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.images.slice(1).map((image, index) => (
-                <div key={index} className="rounded-lg overflow-hidden border border-slate-800 hover:border-sky-500/30 transition-all duration-300">
+                <div key={index} className="rounded-lg overflow-hidden border border-slate-800 hover:border-sky-500/30 transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-2xl">
                   <img 
                     src={image.url} 
                     alt={image.caption}
                     className="w-full aspect-video object-cover"
                     onError={(e) => {
-                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `<div class="w-full aspect-video bg-slate-800 flex items-center justify-center"><div class="text-6xl">${image.fallback || '\ud83d\udcf8'}</div></div>`;
                     }}
                   />
                   {image.caption && (
@@ -141,6 +141,21 @@ const ProjectDetailPage = () => {
                     </div>
                   )}
                 </div>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* Key Features */}
+        {project.keyFeatures && project.keyFeatures.length > 0 && (
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-white mb-8">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {project.keyFeatures.map((feature, index) => (
+                <Card key={index} className="bg-slate-900/50 border-slate-800 p-6 hover:border-sky-500/30 transition-all duration-300 hover:scale-[1.02]">
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+                </Card>
               ))}
             </div>
           </div>
