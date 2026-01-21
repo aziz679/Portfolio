@@ -23,7 +23,7 @@ const CleanHomePage = () => {
   
   const email = "aziziddinmohd7@gmail.com";
   const linkedin = "https://www.linkedin.com/in/mohammed-azizuddin-701434288/";
-  const resumeUrl = "/Mohammed_Azizuddin_Resume.pdf";
+  const resumeUrl = "https://customer-assets.emergentagent.com/job_dev-portfolio-1074/artifacts/pukeipt5_Mohammed%20Azizuddin%20-%20Product%20CV.pdf";
 
   const interests = [
     { text: "Coffee", desc: "Fueled by caffeine, powered by deadlines ☕" },
