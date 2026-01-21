@@ -14,12 +14,10 @@ const CleanHomePage = () => {
   const linkedin = "https://www.linkedin.com/in/mohammed-azizuddin-701434288/";
 
   const interests = [
-    "Building Products",
-    "Marketing",
-    "Automation", 
-    "Coffee ☕",
-    "SEO",
-    "Content"
+    { text: "Coffee", desc: "Fueled by caffeine, powered by deadlines ☕" },
+    { text: "Building Products", desc: "Because talking about ideas is boring" },
+    { text: "Swimming", desc: "Where I brainstorm (and occasionally drown in thoughts)" },
+    { text: "Long Drives", desc: "Best ideas hit at 120 kmph" }
   ];
 
   const navLinks = [
@@ -154,7 +152,7 @@ const CleanHomePage = () => {
             >
               <Linkedin className="mr-2 w-5 h-5" />
               <span className="text-lg font-medium border-b-2 border-emerald-400/0 group-hover:border-emerald-400/100 transition-all">
-                Do you like view my LinkedIn Profile
+                Do you like to view my LinkedIn Profile?
               </span>
             </a>
           </div>
