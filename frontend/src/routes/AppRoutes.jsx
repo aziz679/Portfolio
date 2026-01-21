@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import MinimalistHomePage from '../pages/MinimalistHomePage';
+import CleanHomePage from '../pages/CleanHomePage';
 import AboutPage from '../pages/AboutPage';
 import WorkPage from '../pages/WorkPage';
 import ProjectsPage from '../pages/ProjectsPage';
@@ -10,7 +10,7 @@ import ProjectDetailPage from '../pages/ProjectDetailPage';
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<MinimalistHomePage />} />
+      <Route path="/" element={<CleanHomePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/work" element={<WorkPage />} />
       <Route path="/projects" element={<ProjectsPage />} />
