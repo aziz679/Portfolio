@@ -236,20 +236,43 @@ const NewHomePage = () => {
           
           {Object.entries(techStack).map(([category, tools], catIndex) => (
             <div key={category} className="mb-12 last:mb-0">
-              <h3 className="text-2xl font-bold text-white mb-6 capitalize">{category.replace(/([A-Z])/g, ' $1').trim()}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <h3 className="text-2xl font-bold text-white mb-6 capitalize flex items-center gap-2">
+                <Code2 className="w-6 h-6 text-sky-400" />
+                {category.replace(/([A-Z])/g, ' $1').trim()}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
                 {tools.map((tool, index) => (
                   <Card 
                     key={index} 
-                    className="bg-slate-900/50 border-slate-800 p-6 hover:border-sky-500/30 transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-sky-500/10 group cursor-pointer"
+                    className="bg-slate-900/50 border-slate-800 p-4 hover:border-sky-500/30 transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-sky-500/10 group cursor-pointer relative overflow-hidden"
                     style={{ 
                       animation: `fadeInUp 0.5s ease-out forwards`,
                       animationDelay: `${(catIndex * 0.1) + (index * 0.05)}s`,
                       opacity: 0
                     }}
                   >
-                    <div className="text-center">
-                      <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">{tool.icon}</div>
+                    {/* Animated background glow */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="relative text-center">
+                      {/* Logo image */}
+                      {tool.logo && (
+                        <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                          <img 
+                            src={tool.logo} 
+                            alt={tool.name}
+                            className="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.nextElementSibling.style.display = 'block';
+                            }}
+                          />
+                          <div className="text-4xl hidden group-hover:scale-125 transition-transform duration-300">{tool.icon}</div>
+                        </div>
+                      )}
+                      {!tool.logo && (
+                        <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">{tool.icon}</div>
+                      )}
                       <div className="text-sm font-medium text-slate-300 group-hover:text-sky-400 transition-colors">{tool.name}</div>
                     </div>
                   </Card>
