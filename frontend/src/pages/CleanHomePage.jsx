@@ -444,6 +444,200 @@ const CleanHomePage = () => {
         </div>
       </section>
 
+      {/* What People Say About Me */}
+      <section className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className={`text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-slate-900'}`}>
+            What People <span className="text-emerald-400">Say About Me</span>
+          </h2>
+          <p className={`text-lg mb-12 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+            Don&apos;t just take my word for it—here&apos;s what colleagues and managers have to say.
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Mukul Vyas */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  MV
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Mukul Vyas</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>AI Engineer | GenAI, LLMs, NLP</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Ralvie AI</p>
+                </div>
+                <a href="https://www.linkedin.com/in/mmukulvyas/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;Mohammed combines strategic vision, creativity, and data-driven insights to deliver impactful campaigns. He excels at aligning teams and positioning products effectively. An invaluable asset to any organization seeking measurable results and global growth.&quot;
+              </p>
+            </Card>
+
+            {/* Mir Asadulla Hussain */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  MA
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Mir Asadulla Hussain</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>AI-powered Digital Marketer | 9+ Years</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Former Manager</p>
+                </div>
+                <a href="https://www.linkedin.com/in/mir-asadulla-hussain-703a68169/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;Aziz was a standout performer. His expertise in performance marketing and ability to exceed deliverables were truly impressive. He has a knack for analyzing data, fine-tuning campaigns, and driving measurable results.&quot;
+              </p>
+            </Card>
+
+            {/* Dr. Kunal Saxena */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  KS
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Dr. Kunal Saxena</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Top 50 Digital Mktg Expert | TEDx Speaker</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Former Manager</p>
+                </div>
+                <a href="https://www.linkedin.com/in/dr-kunal-saxena-975527106/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;True Gentleman by his approach. A new born corporate with clear ethics. Reliable, Honest, Hardworking, Fun loving. Always exploring possibilities to take it to the next level. An asset for the team.&quot;
+              </p>
+            </Card>
+
+            {/* Girish Chandru */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  GC
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Girish Chandru</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Digital Marketing | Performance Marketer</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Colleague at Presenova</p>
+                </div>
+                <a href="https://www.linkedin.com/in/girishchandru/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;Aziz&apos;s highest quality is his unwavering commitment to perfection. He approaches challenges creatively, consistently coming up with fresh ideas that drive success. Excellent interpersonal skills and builds strong relationships.&quot;
+              </p>
+            </Card>
+
+            {/* Noora Salam */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  NS
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Noora Salam</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Digital Marketing | SEO Strategist</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Team Lead</p>
+                </div>
+                <a href="https://www.linkedin.com/in/noora-salam/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;Outstanding team member. Despite his quiet demeanour, Aziz consistently delivers results through smart work and strategic thinking. His enthusiasm for learning and dedication to excellence is evident.&quot;
+              </p>
+            </Card>
+
+            {/* Syed Mohammed Rayan */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  SR
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Syed Mohammed Rayan</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Marketing Executive | Digital Marketing</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Colleague at Presenova</p>
+                </div>
+                <a href="https://www.linkedin.com/in/syed-mohammed-rayan-4a2a53283/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;At Presenova, Mohammed consistently stood out as a dedicated, high-performing digital marketing executive. His rapid learning pace and strong work ethic positions him as an ideal candidate for leadership roles.&quot;
+              </p>
+            </Card>
+
+            {/* Solanki Saha */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  SS
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Solanki Saha</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Social Media Manager | Content Creator</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Ralvie AI</p>
+                </div>
+                <a href="https://www.linkedin.com/in/solanki-saha-80b694215/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;Working with Aziz has been a true pleasure. He was incredibly diligent, always on point with his tasks, and had a sharp eye for detail. His consistency and commitment to quality made a noticeable impact.&quot;
+              </p>
+            </Card>
+
+            {/* Syed Areeb Andrabi */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  SA
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Syed Areeb Andrabi</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Analyst | Business Development</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Colleague</p>
+                </div>
+                <a href="https://www.linkedin.com/in/areeb-andrabi/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;I recommend Aziz for his exceptional work ethic, dedication, and quick learning ability. He consistently demonstrated commitment, always going above and beyond to ensure success. A valuable addition to any organization.&quot;
+              </p>
+            </Card>
+
+            {/* Syed Sufiyan S */}
+            <Card className={`p-6 card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg flex-shrink-0">
+                  SF
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className={`font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Syed Sufiyan S</h4>
+                  <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>Performance Marketing Manager</p>
+                  <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Classmate</p>
+                </div>
+                <a href="https://www.linkedin.com/in/thesyedsufiyan/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+              <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                &quot;Aziz is highly skilled in marketing. He has good knowledge of Paid ads and search engine optimisation. He will be asset to any organization he works. All the best.&quot;
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
         <div className="max-w-4xl mx-auto text-center">
