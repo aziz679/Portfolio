@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowRight, Mail, Linkedin, ExternalLink, Menu, X } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, ExternalLink, Menu, X, Sun, Moon, Download } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { projects, techStack } from '../data/portfolioData';
+import { useTheme } from '../context/ThemeContext';
+import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useAnimations';
 
 const CleanHomePage = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
+  
+  // Animation hooks
+  const [heroRef, heroVisible] = useScrollAnimation();
+  const [interestsRef, interestsVisible] = useStaggeredAnimation(4, 150);
+  const [achievementsRef, achievementsVisible] = useScrollAnimation();
+  const [techRef, techVisible] = useScrollAnimation();
+  const [projectsRef, projectsVisible] = useScrollAnimation();
+  const [workRef, workVisible] = useScrollAnimation();
   
   const email = "aziziddinmohd7@gmail.com";
   const linkedin = "https://www.linkedin.com/in/mohammed-azizuddin-701434288/";
+  const resumeUrl = "/Mohammed_Azizuddin_Resume.pdf";
 
   const interests = [
     { text: "Coffee", desc: "Fueled by caffeine, powered by deadlines ☕" },
@@ -28,27 +40,45 @@ const CleanHomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-black text-white' : 'bg-white text-slate-900'}`}>
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-slate-800">
+      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b transition-colors duration-300 ${isDark ? 'bg-black/80 border-slate-800' : 'bg-white/80 border-slate-200'}`}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold text-white hover:text-emerald-400 transition-colors">
+          <Link to="/" className={`text-xl font-bold transition-colors ${isDark ? 'text-white hover:text-emerald-400' : 'text-slate-900 hover:text-emerald-600'}`}>
             MA
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-slate-400 hover:text-emerald-400 transition-colors font-medium"
+                className={`transition-colors font-medium underline-animation ${isDark ? 'text-slate-400 hover:text-emerald-400' : 'text-slate-600 hover:text-emerald-600'}`}
               >
                 {link.name}
               </Link>
             ))}
+            
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg transition-all hover:scale-110 ${isDark ? 'text-slate-400 hover:text-emerald-400 hover:bg-slate-800' : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-100'}`}
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            
+            {/* Resume Download */}
+            <a href={resumeUrl} download>
+              <Button size="sm" variant="outline" className={`btn-press ${isDark ? 'border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10' : 'border-emerald-600 text-emerald-600 hover:bg-emerald-50'}`}>
+                <Download className="mr-2 w-4 h-4" />
+                Resume
+              </Button>
+            </a>
+            
             <a href={`mailto:${email}`}>
-              <Button size="sm" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
+              <Button size="sm" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold btn-press">
                 <Mail className="mr-2 w-4 h-4" />
                 Contact
               </Button>
@@ -56,27 +86,41 @@ const CleanHomePage = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-slate-400 hover:text-emerald-400 transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg ${isDark ? 'text-slate-400' : 'text-slate-600'}`}
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button 
+              className={`transition-colors ${isDark ? 'text-slate-400 hover:text-emerald-400' : 'text-slate-600 hover:text-emerald-600'}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-black/95 border-b border-slate-800 px-6 py-4">
+          <div className={`md:hidden border-b px-6 py-4 animate-fade-in-up ${isDark ? 'bg-black/95 border-slate-800' : 'bg-white/95 border-slate-200'}`}>
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="block py-3 text-slate-400 hover:text-emerald-400 transition-colors font-medium"
+                className={`block py-3 transition-colors font-medium ${isDark ? 'text-slate-400 hover:text-emerald-400' : 'text-slate-600 hover:text-emerald-600'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
+            <a href={resumeUrl} download className="block py-3">
+              <Button size="sm" variant="outline" className="w-full border-emerald-500/30 text-emerald-400">
+                <Download className="mr-2 w-4 h-4" />
+                Download Resume
+              </Button>
+            </a>
             <a href={`mailto:${email}`} className="block py-3">
               <Button size="sm" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold w-full">
                 <Mail className="mr-2 w-4 h-4" />
