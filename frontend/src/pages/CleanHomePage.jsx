@@ -403,30 +403,30 @@ const CleanHomePage = () => {
             </Card>
 
             {/* ISBM */}
-            <Card className="bg-slate-900/30 border-slate-800 hover:border-emerald-500/50 transition-all duration-300 p-6 cursor-pointer group" onClick={() => navigate('/work')}>
+            <Card className={`p-6 cursor-pointer group card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`} onClick={() => navigate('/work')}>
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                  <h3 className={`text-xl font-bold group-hover:text-emerald-400 transition-colors mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>
                     ISBM
                   </h3>
                   <p className="text-emerald-400 font-medium text-sm mb-2">Marketing Executive</p>
-                  <p className="text-slate-400 text-sm">Campus outreach across 20+ campuses, 1000+ students engaged. Publisher partnerships with 15-20% cost reduction.</p>
+                  <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Campus outreach across 20+ campuses, 1000+ students engaged. Publisher partnerships with 15-20% cost reduction.</p>
                 </div>
-                <span className="text-slate-500 text-sm">Aug - Dec 2023</span>
+                <span className={`text-sm ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Aug - Dec 2023</span>
               </div>
             </Card>
 
             {/* Presenova */}
-            <Card className="bg-slate-900/30 border-slate-800 hover:border-emerald-500/50 transition-all duration-300 p-6 cursor-pointer group" onClick={() => navigate('/work')}>
+            <Card className={`p-6 cursor-pointer group card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`} onClick={() => navigate('/work')}>
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                  <h3 className={`text-xl font-bold group-hover:text-emerald-400 transition-colors mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>
                     Presenova Management Solution LLP
                   </h3>
                   <p className="text-emerald-400 font-medium text-sm mb-2">Digital Marketing Executive</p>
-                  <p className="text-slate-400 text-sm">Managed ₹8 Cr annual ad spend. 18% ROI improvement, 20% CPL optimization, 25-30% lead-to-application conversion.</p>
+                  <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Managed ₹8 Cr annual ad spend. 18% ROI improvement, 20% CPL optimization, 25-30% lead-to-application conversion.</p>
                 </div>
-                <span className="text-slate-500 text-sm">Sep 2022 - Jul 2023</span>
+                <span className={`text-sm ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Sep 2022 - Jul 2023</span>
               </div>
             </Card>
           </div>
@@ -434,7 +434,7 @@ const CleanHomePage = () => {
           <div className="mt-8 text-center">
             <Button
               variant="outline"
-              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+              className={`btn-press ${isDark ? 'border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10' : 'border-emerald-600 text-emerald-600 hover:bg-emerald-50'}`}
               onClick={() => navigate('/work')}
             >
               View Full Experience
@@ -445,20 +445,32 @@ const CleanHomePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 border-t border-slate-800">
+      <section className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className={`text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Ready to take your idea to the next level?
             <br />
             <span className="text-emerald-400">Let&apos;s work together.</span>
           </h2>
           
-          <a href={`mailto:${email}`}>
-            <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold mt-6">
-              <Mail className="mr-2 w-5 h-5" />
-              Contact Me
-            </Button>
-          </a>
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <a href={`mailto:${email}`}>
+              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold btn-press hover-lift animate-glow-pulse">
+                <Mail className="mr-2 w-5 h-5" />
+                Contact Me
+              </Button>
+            </a>
+            <a href={resumeUrl} download>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className={`btn-press hover-lift ${isDark ? 'border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10' : 'border-emerald-600 text-emerald-600 hover:bg-emerald-50'}`}
+              >
+                <Download className="mr-2 w-5 h-5" />
+                Download Resume
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
     </div>
