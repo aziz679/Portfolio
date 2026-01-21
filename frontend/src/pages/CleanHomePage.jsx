@@ -190,12 +190,15 @@ const CleanHomePage = () => {
             {interests.map((interest, index) => (
               <div 
                 key={index}
-                className="bg-slate-900/30 border border-slate-800 hover:border-emerald-500/50 rounded-lg p-4 transition-all cursor-default group"
+                className={`rounded-lg p-4 transition-all cursor-default group card-hover ${
+                  interestsVisible.includes(index) ? 'animate-fade-in-up' : 'opacity-0'
+                } ${isDark ? 'bg-slate-900/30 border border-slate-800 hover:border-emerald-500/50' : 'bg-slate-50 border border-slate-200 hover:border-emerald-500/50'}`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <span className="text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                <span className={`text-lg font-semibold group-hover:text-emerald-400 transition-colors ${isDark ? 'text-white' : 'text-slate-900'}`}>
                   {interest.text}
                 </span>
-                <p className="text-slate-500 text-sm mt-1 italic">{interest.desc}</p>
+                <p className={`text-sm mt-1 italic ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>{interest.desc}</p>
               </div>
             ))}
           </div>
@@ -205,10 +208,10 @@ const CleanHomePage = () => {
               href={linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors group"
+              className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors group underline-animation"
             >
               <Linkedin className="mr-2 w-5 h-5" />
-              <span className="text-lg font-medium border-b-2 border-emerald-400/0 group-hover:border-emerald-400/100 transition-all">
+              <span className="text-lg font-medium">
                 Do you like to view my LinkedIn Profile?
               </span>
             </a>
@@ -217,45 +220,45 @@ const CleanHomePage = () => {
       </section>
 
       {/* Achievements Highlight */}
-      <section className="py-24 px-6 border-t border-slate-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">
+      <section ref={achievementsRef} className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
+        <div className={`max-w-4xl mx-auto ${achievementsVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             The <span className="text-emerald-400">Numbers</span> Don&apos;t Lie
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+            <Card className={`p-6 text-center card-hover ${isDark ? 'bg-slate-900/50 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
               <div className="text-3xl font-bold text-emerald-400">1,000+</div>
-              <div className="text-sm text-slate-400 mt-1">Users in 30 days</div>
-              <div className="text-xs text-slate-600 mt-1">AI Kaptan launch</div>
+              <div className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Users in 30 days</div>
+              <div className={`text-xs mt-1 ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>AI Kaptan launch</div>
             </Card>
-            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+            <Card className={`p-6 text-center card-hover ${isDark ? 'bg-slate-900/50 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
               <div className="text-3xl font-bold text-emerald-400">₹84K+</div>
-              <div className="text-sm text-slate-400 mt-1">Saved annually</div>
-              <div className="text-xs text-slate-600 mt-1">Smart automation</div>
+              <div className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Saved annually</div>
+              <div className={`text-xs mt-1 ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>Smart automation</div>
             </Card>
-            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+            <Card className={`p-6 text-center card-hover ${isDark ? 'bg-slate-900/50 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
               <div className="text-3xl font-bold text-emerald-400">Page 1</div>
-              <div className="text-sm text-slate-400 mt-1">Google ranking</div>
-              <div className="text-xs text-slate-600 mt-1">In 30 days, $0 ads</div>
+              <div className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Google ranking</div>
+              <div className={`text-xs mt-1 ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>In 30 days, $0 ads</div>
             </Card>
-            <Card className="bg-slate-900/50 border-slate-800 p-6 text-center hover:border-emerald-500/50 transition-colors">
+            <Card className={`p-6 text-center card-hover ${isDark ? 'bg-slate-900/50 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}>
               <div className="text-3xl font-bold text-emerald-400">₹8 Cr</div>
-              <div className="text-sm text-slate-400 mt-1">Ad spend managed</div>
-              <div className="text-xs text-slate-600 mt-1">18% ROI improvement</div>
+              <div className={`text-sm mt-1 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Ad spend managed</div>
+              <div className={`text-xs mt-1 ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>18% ROI improvement</div>
             </Card>
           </div>
           
-          <p className="text-slate-500 text-center italic">
+          <p className={`text-center italic ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
             &quot;I don&apos;t just talk strategy—I ship products, break spreadsheets, and occasionally break the internet.&quot;
           </p>
         </div>
       </section>
 
       {/* Tech Stack */}
-      <section className="py-24 px-6 border-t border-slate-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">
+      <section ref={techRef} className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
+        <div className={`max-w-4xl mx-auto ${techVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Tech <span className="text-emerald-400">Stack</span>
           </h2>
           
@@ -263,7 +266,7 @@ const CleanHomePage = () => {
             {Object.values(techStack).flat().map((tool, index) => (
               <div
                 key={index}
-                className="aspect-square bg-slate-900/50 rounded-md border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 hover:scale-110 flex items-center justify-center group cursor-pointer p-2"
+                className={`aspect-square rounded-md border transition-all duration-300 hover:scale-110 flex items-center justify-center group cursor-pointer p-2 ${isDark ? 'bg-slate-900/50 border-slate-800 hover:border-emerald-500/50' : 'bg-slate-50 border-slate-200 hover:border-emerald-500/50'}`}
                 title={tool.name}
               >
                 {tool.logo ? (
