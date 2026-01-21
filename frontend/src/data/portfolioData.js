@@ -88,24 +88,14 @@ export const projects = [
     
     images: [
       { 
-        url: "https://i.imgur.com/placeholder-aikaptan-hero.jpg", 
+        url: "https://static.prod-images.emergentagent.com/jobs/31c66a46-85c1-4314-b6c2-c9e0361cfca0/images/72df14d4f117e51bd729b56e6d0624a9af12e74bcae7bff6d87e9f03ba0a9db1.png", 
         caption: "AI Kaptan Homepage - Clean discovery interface with smart search",
         fallback: "🚀"
-      },
-      { 
-        url: "https://i.imgur.com/placeholder-aikaptan-tools.jpg", 
-        caption: "630+ AI Tools with Advanced Filtering and Categories",
-        fallback: "🔍"
       },
       { 
         url: "https://customer-assets.emergentagent.com/job_4bff5152-f2ea-4058-b31e-c55d148754d9/artifacts/kpzygqg9_image.png", 
         caption: "Admin Dashboard - Content management and analytics",
         fallback: "📊"
-      },
-      { 
-        url: "https://i.imgur.com/placeholder-aikaptan-search.jpg", 
-        caption: "Natural Language Search - Find tools by describing what you need",
-        fallback: "💡"
       }
     ],
     
@@ -242,19 +232,9 @@ export const projects = [
     
     images: [
       { 
-        url: "https://i.imgur.com/placeholder-ralvie-hero.jpg", 
+        url: "https://static.prod-images.emergentagent.com/jobs/31c66a46-85c1-4314-b6c2-c9e0361cfca0/images/fa526b06d7c604ddfb568637408a5f7fff2132f283ac7c5e162713b53f894d08.png", 
         caption: "Hero Section - 50K+ daily calls, 98% satisfaction, AI that sounds human",
         fallback: "📞"
-      },
-      { 
-        url: "https://i.imgur.com/placeholder-ralvie-features.jpg", 
-        caption: "Features Grid - Technical capabilities explained simply",
-        fallback: "✨"
-      },
-      { 
-        url: "https://i.imgur.com/placeholder-ralvie-testimonials.jpg", 
-        caption: "Social Proof - Real customer testimonials and results",
-        fallback: "💬"
       }
     ],
     
@@ -314,19 +294,9 @@ export const projects = [
     
     images: [
       { 
-        url: "https://i.imgur.com/placeholder-aiunleashed-hero.jpg", 
+        url: "https://static.prod-images.emergentagent.com/jobs/31c66a46-85c1-4314-b6c2-c9e0361cfca0/images/8caa9d9f9b58430b1726b0c011f43893e8f3c3a9cb9401665fd7bce9d7cd6b12.png", 
         caption: "AI Unleashed Homepage - Purple neon theme with AI tools and news",
         fallback: "🌟"
-      },
-      { 
-        url: "https://i.imgur.com/placeholder-aiunleashed-tools.jpg", 
-        caption: "Tools Hub - Curated AI tools with descriptions and links",
-        fallback: "🛠️"
-      },
-      { 
-        url: "https://i.imgur.com/placeholder-aiunleashed-blog.jpg", 
-        caption: "Blog Section - AI news, tutorials, and industry insights",
-        fallback: "📰"
       }
     ],
     
