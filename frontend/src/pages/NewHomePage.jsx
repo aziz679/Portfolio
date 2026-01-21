@@ -4,7 +4,7 @@ import { hero, introduction, capabilities, projects, techStack } from '../data/p
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowRight, ExternalLink, Sparkles, Code2 } from 'lucide-react';
 
 const NewHomePage = () => {
   const navigate = useNavigate();
