@@ -128,18 +128,20 @@ const CleanHomePage = () => {
       <section className="py-24 px-6 border-t border-slate-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">
-            Beyond the <span className="text-emerald-400">Work</span>
+            Beyond the <span className="text-emerald-400">Code</span>
           </h2>
           
-          <div className="flex flex-wrap gap-3">
+          <div className="grid md:grid-cols-2 gap-4">
             {interests.map((interest, index) => (
-              <Badge 
+              <div 
                 key={index}
-                variant="outline"
-                className="border-slate-700 text-slate-300 hover:border-emerald-500/50 hover:text-emerald-400 transition-all cursor-default text-base py-2 px-4"
+                className="bg-slate-900/30 border border-slate-800 hover:border-emerald-500/50 rounded-lg p-4 transition-all cursor-default group"
               >
-                {interest}
-              </Badge>
+                <span className="text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                  {interest.text}
+                </span>
+                <p className="text-slate-500 text-sm mt-1 italic">{interest.desc}</p>
+              </div>
             ))}
           </div>
           
