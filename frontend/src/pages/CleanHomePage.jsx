@@ -1,6 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Mail, Linkedin, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { ArrowRight, Mail, Linkedin, ExternalLink, Menu, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -8,6 +8,7 @@ import { projects, techStack } from '../data/portfolioData';
 
 const CleanHomePage = () => {
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const email = "aziziddinmohd7@gmail.com";
   const linkedin = "https://www.linkedin.com/in/mohammed-azizuddin-701434288/";
@@ -21,8 +22,73 @@ const CleanHomePage = () => {
     "Content"
   ];
 
+  const navLinks = [
+    { name: 'About', path: '/about' },
+    { name: 'Work', path: '/work' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-slate-800">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link to="/" className="text-xl font-bold text-white hover:text-emerald-400 transition-colors">
+            MA
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-slate-400 hover:text-emerald-400 transition-colors font-medium"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <a href={`mailto:${email}`}>
+              <Button size="sm" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
+                <Mail className="mr-2 w-4 h-4" />
+                Contact
+              </Button>
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-slate-400 hover:text-emerald-400 transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-black/95 border-b border-slate-800 px-6 py-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="block py-3 text-slate-400 hover:text-emerald-400 transition-colors font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <a href={`mailto:${email}`} className="block py-3">
+              <Button size="sm" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold w-full">
+                <Mail className="mr-2 w-4 h-4" />
+                Contact
+              </Button>
+            </a>
+          </div>
+        )}
+      </nav>
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-6 pt-20">
         <div className="max-w-4xl w-full">
@@ -202,9 +268,82 @@ const CleanHomePage = () => {
             <Button
               variant="outline"
               className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
-              onClick={() => navigate('/work')}
+              onClick={() => navigate('/projects')}
             >
               View More Projects...
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Work Section */}
+      <section className="py-24 px-6 border-t border-slate-800">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">
+            Experience <span className="text-emerald-400">Work</span>
+          </h2>
+          
+          <p className="text-lg text-slate-400 mb-8">
+            Building marketing systems and shipping products at startups. From first marketing hire to leading teams.
+          </p>
+          
+          <div className="space-y-4">
+            {/* Ralvie AI */}
+            <Card className="bg-slate-900/30 border-slate-800 hover:border-emerald-500/50 transition-all duration-300 p-6 cursor-pointer group" onClick={() => navigate('/work')}>
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      Ralvie AI
+                    </h3>
+                    <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 text-xs">
+                      Current
+                    </Badge>
+                  </div>
+                  <p className="text-emerald-400 font-medium text-sm mb-2">First Marketing Hire → Product Marketing Specialist</p>
+                  <p className="text-slate-400 text-sm">Built the entire marketing function from zero. CRM implementation, content systems, website launch, cost optimization (₹84K saved), pricing models.</p>
+                </div>
+                <span className="text-slate-500 text-sm">2024 - Present</span>
+              </div>
+            </Card>
+
+            {/* ISBM */}
+            <Card className="bg-slate-900/30 border-slate-800 hover:border-emerald-500/50 transition-all duration-300 p-6 cursor-pointer group" onClick={() => navigate('/work')}>
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                    ISBM
+                  </h3>
+                  <p className="text-emerald-400 font-medium text-sm mb-2">Marketing Executive</p>
+                  <p className="text-slate-400 text-sm">Campus outreach across 20+ campuses, 1000+ students engaged. Publisher partnerships with 15-20% cost reduction.</p>
+                </div>
+                <span className="text-slate-500 text-sm">Aug - Dec 2023</span>
+              </div>
+            </Card>
+
+            {/* Presenova */}
+            <Card className="bg-slate-900/30 border-slate-800 hover:border-emerald-500/50 transition-all duration-300 p-6 cursor-pointer group" onClick={() => navigate('/work')}>
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                    Presenova Management Solution LLP
+                  </h3>
+                  <p className="text-emerald-400 font-medium text-sm mb-2">Digital Marketing Executive</p>
+                  <p className="text-slate-400 text-sm">Managed ₹8 Cr annual ad spend. 18% ROI improvement, 20% CPL optimization, 25-30% lead-to-application conversion.</p>
+                </div>
+                <span className="text-slate-500 text-sm">Sep 2022 - Jul 2023</span>
+              </div>
+            </Card>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <Button
+              variant="outline"
+              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+              onClick={() => navigate('/work')}
+            >
+              View Full Experience
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
         </div>

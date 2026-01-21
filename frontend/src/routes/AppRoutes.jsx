@@ -1,21 +1,21 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import CleanHomePage from '../pages/CleanHomePage';
-import AboutPage from '../pages/AboutPage';
-import WorkPage from '../pages/WorkPage';
-import ProjectsPage from '../pages/ProjectsPage';
-import ContactPage from '../pages/ContactPage';
-import ProjectDetailPage from '../pages/ProjectDetailPage';
+import InspiredAboutPage from '../pages/InspiredAboutPage';
+import InspiredWorkPage from '../pages/InspiredWorkPage';
+import InspiredProjectsPage from '../pages/InspiredProjectsPage';
+import InspiredProjectDetailPage from '../pages/InspiredProjectDetailPage';
+import InspiredContactPage from '../pages/InspiredContactPage';
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<CleanHomePage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/work" element={<WorkPage />} />
-      <Route path="/projects" element={<ProjectsPage />} />
-      <Route path="/projects/:id" element={<ProjectDetailPage />} />
-      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/about" element={<InspiredAboutPage />} />
+      <Route path="/work" element={<InspiredWorkPage />} />
+      <Route path="/projects" element={<InspiredProjectsPage />} />
+      <Route path="/projects/:id" element={<InspiredProjectDetailPage />} />
+      <Route path="/contact" element={<InspiredContactPage />} />
     </Routes>
   );
 };
