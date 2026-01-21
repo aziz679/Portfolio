@@ -292,13 +292,13 @@ const CleanHomePage = () => {
       </section>
 
       {/* Projects Preview */}
-      <section className="py-24 px-6 border-t border-slate-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">
+      <section ref={projectsRef} className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
+        <div className={`max-w-4xl mx-auto ${projectsVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className={`text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             <span className="text-emerald-400">Projects</span>
           </h2>
           
-          <p className="text-lg text-slate-400 mb-12">
+          <p className={`text-lg mb-12 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
             I love Transforming concepts into impact: where strategic vision meets measurable results. 
             See how I blend creativity, data, and execution to build products that resonate and drive growth.
             <br />
@@ -306,23 +306,24 @@ const CleanHomePage = () => {
           </p>
           
           <div className="space-y-6">
-            {projects.slice(0, 3).map((project) => (
+            {projects.slice(0, 3).map((project, index) => (
               <Card 
                 key={project.id}
-                className="bg-slate-900/30 border-slate-800 hover:border-emerald-500/50 transition-all duration-300 p-6 cursor-pointer group"
+                className={`p-6 cursor-pointer group card-hover img-zoom ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`}
                 onClick={() => navigate(`/projects/${project.id}`)}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Image */}
                   {project.images && project.images[0] && (
-                    <div className="md:w-1/3 rounded-lg overflow-hidden border border-slate-800 group-hover:border-emerald-500/50 transition-colors">
+                    <div className={`md:w-1/3 rounded-lg overflow-hidden border group-hover:border-emerald-500/50 transition-colors ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
                       <img 
                         src={project.images[0].url}
                         alt={project.name}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                         onError={(e) => {
                           const fallback = project.images[0].fallback || '🚀';
-                          e.target.parentElement.innerHTML = `<div class="w-full h-48 bg-slate-800 flex items-center justify-center text-4xl">${fallback}</div>`;
+                          e.target.parentElement.innerHTML = `<div class="w-full h-48 ${isDark ? 'bg-slate-800' : 'bg-slate-100'} flex items-center justify-center text-4xl">${fallback}</div>`;
                         }}
                       />
                     </div>
@@ -330,11 +331,11 @@ const CleanHomePage = () => {
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+                    <h3 className={`text-2xl font-bold group-hover:text-emerald-400 transition-colors mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>
                       {project.name}
                     </h3>
                     <p className="text-emerald-400 font-medium text-sm mb-3">{project.tagline}</p>
-                    <p className="text-slate-400 leading-relaxed mb-4">{project.shortDescription}</p>
+                    <p className={`leading-relaxed mb-4 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{project.shortDescription}</p>
                     
                     <div className="flex items-center gap-3">
                       <span className="text-emerald-400 text-sm font-medium group-hover:underline">
@@ -346,7 +347,7 @@ const CleanHomePage = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="text-slate-400 hover:text-emerald-400 transition-colors"
+                          className={`transition-colors ${isDark ? 'text-slate-400 hover:text-emerald-400' : 'text-slate-500 hover:text-emerald-600'}`}
                         >
                           <ExternalLink className="w-4 h-4" />
                         </a>
@@ -361,7 +362,7 @@ const CleanHomePage = () => {
           <div className="mt-8 text-center">
             <Button
               variant="outline"
-              className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+              className={`btn-press ${isDark ? 'border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10' : 'border-emerald-600 text-emerald-600 hover:bg-emerald-50'}`}
               onClick={() => navigate('/projects')}
             >
               View More Projects...
@@ -371,23 +372,23 @@ const CleanHomePage = () => {
       </section>
 
       {/* Experience Work Section */}
-      <section className="py-24 px-6 border-t border-slate-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">
+      <section ref={workRef} className={`py-24 px-6 border-t ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
+        <div className={`max-w-4xl mx-auto ${workVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className={`text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Experience <span className="text-emerald-400">Work</span>
           </h2>
           
-          <p className="text-lg text-slate-400 mb-8">
+          <p className={`text-lg mb-8 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
             Building marketing systems and shipping products at startups. From first marketing hire to leading teams.
           </p>
           
           <div className="space-y-4">
             {/* Ralvie AI */}
-            <Card className="bg-slate-900/30 border-slate-800 hover:border-emerald-500/50 transition-all duration-300 p-6 cursor-pointer group" onClick={() => navigate('/work')}>
+            <Card className={`p-6 cursor-pointer group card-hover ${isDark ? 'bg-slate-900/30 border-slate-800 hover:border-emerald-500/50' : 'bg-white border-slate-200 hover:border-emerald-500/50 shadow-sm'}`} onClick={() => navigate('/work')}>
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    <h3 className={`text-xl font-bold group-hover:text-emerald-400 transition-colors ${isDark ? 'text-white' : 'text-slate-900'}`}>
                       Ralvie AI
                     </h3>
                     <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 text-xs">
@@ -395,9 +396,9 @@ const CleanHomePage = () => {
                     </Badge>
                   </div>
                   <p className="text-emerald-400 font-medium text-sm mb-2">First Marketing Hire → Product Marketing Specialist</p>
-                  <p className="text-slate-400 text-sm">Built the entire marketing function from zero. CRM implementation, content systems, website launch, cost optimization (₹84K saved), pricing models.</p>
+                  <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Built the entire marketing function from zero. CRM implementation, content systems, website launch, cost optimization (₹84K saved), pricing models.</p>
                 </div>
-                <span className="text-slate-500 text-sm">2024 - Present</span>
+                <span className={`text-sm ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>2024 - Present</span>
               </div>
             </Card>
 
