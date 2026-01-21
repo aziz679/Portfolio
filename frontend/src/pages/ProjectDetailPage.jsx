@@ -76,13 +76,13 @@ const ProjectDetailPage = () => {
         
         {/* Main Project Image */}
         {project.images && project.images[0] && (
-          <div className="mb-12 rounded-lg overflow-hidden border border-slate-800">
+          <div className="mb-12 rounded-lg overflow-hidden border border-slate-800 shadow-2xl">
             <img 
               src={project.images[0].url} 
               alt={project.images[0].caption}
               className="w-full"
               onError={(e) => {
-                e.target.parentElement.innerHTML = `<div class="w-full aspect-video bg-slate-800 flex items-center justify-center"><div class="text-6xl">${project.id === 1 ? '🚀' : project.id === 2 ? '📧' : project.id === 3 ? '📞' : '📺'}</div></div>`;
+                e.target.parentElement.innerHTML = `<div class="w-full aspect-video bg-slate-800 flex items-center justify-center"><div class="text-8xl">${project.images[0].fallback || '🚀'}</div></div>`;
               }}
             />
             {project.images[0].caption && (
